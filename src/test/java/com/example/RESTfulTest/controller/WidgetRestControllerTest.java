@@ -117,7 +117,7 @@ class WidgetRestControllerTest {
 
         mockMvc.perform(put("/rest/widget/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON)
-                        //exige en el error del put un ifmatch sino no pasa test
+                        //exige en el error del put un ifmatch sino no pasa test, esta en parametros por eso lo exige.
                         .header(HttpHeaders.IF_MATCH, 1)
                         .content(asJsonString(widgetToPut)))
                 .andExpect(status().isOk())
