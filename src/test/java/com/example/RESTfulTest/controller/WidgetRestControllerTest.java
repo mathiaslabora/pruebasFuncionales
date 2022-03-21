@@ -53,7 +53,7 @@ class WidgetRestControllerTest {
                 // Validate headers
                 .andExpect(header().string(HttpHeaders.LOCATION, "/rest/widgets"))
 
-                // Validate the returned fields
+                // Validate the returned fields.
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[0].name", is("Widget Name")))
@@ -133,7 +133,7 @@ class WidgetRestControllerTest {
                 .andExpect(jsonPath("$.version", is(1)));
     }
 
-    //put not found
+    //put not found:
     @Test
     @DisplayName("PUT /rest/widget/1 -suc")
     void testPutWidgetNotFound() throws Exception {
@@ -149,7 +149,7 @@ class WidgetRestControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    //get by id
+    //get by id:
     @Test
     @DisplayName("GET /rest/widget/1 - By Id")
     void testGetWidgetBy() throws Exception {
